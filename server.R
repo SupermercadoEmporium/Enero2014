@@ -7,24 +7,24 @@ shinyServer(function(input, output) {
   
   output$enero<-renderPrint({
     y<-input$select
-    paste(y,round(Prob_prod_Ene[y], digits=4))
+    paste(y,round(a_matrix_ene[y,y], digits=4))
   })
   
   output$enero2<-renderPrint({
     y<-input$select2
-    paste(y,round(Prob_prod_Ene[y], digits=4))
+    paste(y,round(a_matrix_ene[y,y], digits=4))
   })
   
   output$confidenceenero<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Confidence",round(a_matrix_ene[x,y]/Prob_prod_Ene[x], digits=4))
+    paste("Confidence",round(a_matrix_ene[x,y]/a_matrix_ene[x,x], digits=4))
   })
   
   output$liftenero<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift",round(a_matrix_ene[x,y]/(Prob_prod_Ene[x]*Prob_prod_Ene[y]), digits=4))
+    paste("Lift",round(a_matrix_ene[x,y]/(a_matrix_ene[y,y]*a_matrix_ene[x,x]), digits=4))
   })
   
   output$tablanamecat1enero<-renderText({
