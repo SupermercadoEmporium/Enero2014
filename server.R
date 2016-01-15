@@ -24,7 +24,7 @@ shinyServer(function(input, output) {
   output$liftenero<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift",round(round(a_matrix_ene[x,y]/a_matrix_ene[y,y], digits=4)/round(a_matrix_ene[x,x], digits=4)), digits=4))
+    paste("Lift",round(round(a_matrix_ene[x,y]/a_matrix_ene[y,y], digits=4)/round(a_matrix_ene[x,x], digits=4), digits=4))
   })
   
   output$tablanamecat1enero<-renderText({
